@@ -1,4 +1,6 @@
 ## Olá  você que acessou essa pasta
+        Essa pasta tem como objetivo auxiliar alunos que estejam entrando no estudo de Portugol Studio
+        Os códigos foram feitos como atividade do meu curso do START Latam
 ***
  
  * **As pastas serão divididas de acordo com o assuntos abordado no curso**
