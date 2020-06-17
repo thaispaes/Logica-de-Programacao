@@ -12,8 +12,8 @@
     
 #### **_Até agora foram inseridas as seguintes pastas_**
 - [x] Estrutura inicial e operadores
+- [x] Operadores lógicos e _SE/SENAO_
+- [x] Estrutura de condição _ESCOLHA/CASO_
+- [x] Estruturas de repetição _Para/Enquanto_
 
-**_Falta as seguintes_**
-- [ ] Operadores lógicos e _SE/SENAO_
-- [ ] Estrutura de condição _ESCOLHA/CASO_
-- [ ] Estruturas de repetição _Para/Enquanto_
+
