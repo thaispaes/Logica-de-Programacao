@@ -1,25 +1,26 @@
 programa
-{
+{ 
+	funcao inicio(){
 
-funcao inicio(){
+	//Variáveis
+	inteiro valor=-2147483646,maior=-2147483646;
 
-	//Variaveis
-	inteiro sair=1,valor=-2147483646,maior=-2147483646;//menor número possível
-
-	escreva("* ------- Bem Vindo Usuário ------- * \n")
-	enquanto(sair != 0){
-		escreva("*- Informe um número -*")
-		leia(valor);
+	escreva("*-------------- Bem Vindo usuário --------------* \n")
+	escreva("*---- Para finalizar a aplicação digite (0) ----* \n")
+	
+		enquanto(valor != 0){
+			escreva("*---------- Informe números aleatorios ----------* \n")
+			leia(valor);
+			
+				se(maior<valor e (valor%2)==0 e valor !=0){
+					maior=valor;
+				}
+		}
 		
-			se(maior<valor e (valor%2)==0 e valor !=0){
-				maior=valor;
-				
-			}
-	}
-		escreva("Maior número par foi "+maior)
+		escreva("*------ Maior número par informado foi "+maior+" ------*")
 	}
 }
-/* $$$ Portugol Studio $$$ 
+l Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
