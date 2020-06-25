@@ -8,6 +8,7 @@
     * Operadores lógicos e estrutura de condição - SE/SENAO
     * Estrutura de condição - ESCOLHA/CASO
     * Estrutura de repetição - PARA/ENQUANTO
+    * Funções e Procedimentos
     * _Em aguardo do cronogroma da proxima semana_
     
 #### **_Até agora foram inseridas as seguintes pastas_**
