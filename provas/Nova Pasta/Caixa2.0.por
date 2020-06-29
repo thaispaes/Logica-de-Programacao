@@ -2,8 +2,8 @@ programa
 {
 
 	//Variáveis 
-	inteiro opcao=1,sair=1,logout=1
-	real valorSaque=0,valorDeposito=0
+	inteiro opcao=0,sair=1,logout=1
+	real valorSaque=0.0,valorDeposito=0.0
 	real dinheiroConta=100.00
  	inteiro senha=123456 conta=1234
 
@@ -52,7 +52,7 @@ programa
 		escreva("| Informe o quanto quer sacar --> ")
 		leia(valorSaque)
 		escreva("|                                             |\n")
-		verificarSaque(dinheiroConta)
+		verificarSaque()
 		escreva("|------- Saque realizado com sucesso ---------|\n")
 		escreva("|---------------------------------------------|\n")
 		saida()
@@ -66,26 +66,23 @@ programa
 			se (sair!=1){
 				escreva("|     Obrigado por utilizar a aplicação        |\n")
 				escreva("===============================================|")
-			}
-		limpa()
+			}senao
+			limpa()
 	}
 
-	funcao real verificarSaque(real dinheiro){
-		se (valorSaque>100 e dinheiro==100){
-			enquanto (valorSaque>100){
+	funcao real verificarSaque(dinheiroConta){
+		se (valorSaque>dinheiroConta ){
+			enquanto (valorSaque>dinheiroConta){
 				escreva("| O valor informado não é válido para o saque |\n")
-				escreva("|    Precisa ser menor ou igual a 100 reais   |\n")
+				escreva("|Precisa ser menor ou igual ao valor na conta |\n")
 				escreva("|                                             |\n")
 				escreva("| Informe um novo valor --> ")
 				leia(valorSaque)
-			}	
-				dinheiroConta=valorSaque-dinheiro
-		}senao{
-			dinheiroConta=dinheiroConta-valorSaque
+			}		
 		}
+		dinheiroConta=valorSaque-dinheiroConta
 		retorne dinheiroConta
 	}
-	
 	funcao inicio()
 	{	
 		enquanto (logout==1){
@@ -126,7 +123,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2976; 
+ * @POSICAO-CURSOR = 2711; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
