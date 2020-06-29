@@ -53,7 +53,7 @@ programa
 		se (valorSaque>dinheiroConta ){
 			enquanto (valorSaque>dinheiroConta){
 				escreva("| O valor informado não é válido para o saque |\n")
-				escreva("|    Precisa ser menor ou igual a 100 reais   |\n")
+				escreva("|Precisa ser menor ou igual ao valor na conta |\n")
 				escreva("|                                             |\n")
 				escreva("| Informe um novo valor --> ")
 				leia(valorSaque)
@@ -108,7 +108,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2364; 
+ * @POSICAO-CURSOR = 1771; 
  * @DOBRAMENTO-CODIGO = [9, 17];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
