@@ -45,8 +45,8 @@ programa
 			se (sair!=1){
 				escreva("|     Obrigado por utilizar a aplicação        |\n")
 				escreva("===============================================|")
-			}
-		limpa()
+			}senao
+			limpa()
 	}
 
 	funcao real verificarSaque(dinheiroConta){
@@ -65,7 +65,8 @@ programa
 	
 	funcao inicio()
 	{	
-
+			
+		
 		enquanto (sair==1){
 			escreva("|=====================================================|\n")
 			escreva("|-------- Bem vindo ao nosso caixa eletrônico --------|\n")
@@ -108,7 +109,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1771; 
+ * @POSICAO-CURSOR = 1575; 
  * @DOBRAMENTO-CODIGO = [9, 17];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
