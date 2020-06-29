@@ -12,8 +12,8 @@ programa
 		escreva("| O seu saldo atual da conta é "+dinheiroConta+"R$ \n")
 		escreva("|                                             |\n")
 		escreva("|---------------------------------------------|\n")
-		limpa()
 		saida()
+		limpa()
 	}
 	funcao deposito(){
 		escreva("|---------------------------------------------|\n")
@@ -25,41 +25,46 @@ programa
 		escreva("|---------------------------------------------|\n")
 		limpa()
 		saida()
+		
 	}
 	funcao saque(){
 		escreva("|---------------------------------------------|\n")
 		escreva("| Informe o quanto quer sacar --> ")
 		leia(valorSaque)
 		escreva("|                                             |\n")
-		verificarSaque()
+		verificarSaque(dinheiroConta)
 		escreva("|------- Saque realizado com sucesso ---------|\n")
 		escreva("|---------------------------------------------|\n")
 		limpa()
 		saida()
+		
 	}
 	funcao saida(){
 		escreva("|==============================================|\n")
 		escreva("|     Deseja realizar mais alguma operação?    |\n")
-		escreva("| Digite '1' para sim e outro número para não  |")
+		escreva("| Digite '1' para sim e outro número para não -> ")
 		leia(sair)
 			se (sair!=1){
 				escreva("|     Obrigado por utilizar a aplicação        |\n")
 				escreva("===============================================|")
 			}
-		
+		limpa()
 	}
 
-	funcao real verificarSaque(dinheiroConta){
-		se (valorSaque>100){
+	funcao real verificarSaque(real dinheiro){
+		se (valorSaque>100 e dinheiro==100){
 			enquanto (valorSaque>100){
 				escreva("| O valor informado não é válido para o saque |\n")
 				escreva("|    Precisa ser menor ou igual a 100 reais   |\n")
 				escreva("|                                             |\n")
 				escreva("| Informe um novo valor --> ")
 				leia(valorSaque)
-			}			
-		}
-		retorne valorSaque-dinheiroConta
+			}	
+				dinheiroConta=valorSaque-dinheiro
+		}senao
+			dinheiroConta=valorSaque-dinheiro
+		
+		retorne dinheiroConta
 	}
 	
 	funcao inicio()
@@ -94,6 +99,7 @@ programa
 					escreva("------------ O valor inserido é inválido ------------|\n")
 					escreva("----- Digite '1' para retornar ao menu de antes -----|\n")
 					leia(sair)
+					limpa()
 					
 				pare
 			}
@@ -106,8 +112,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 492; 
- * @DOBRAMENTO-CODIGO = [39, 51];
+ * @POSICAO-CURSOR = 2072; 
+ * @DOBRAMENTO-CODIGO = [9, 17, 41];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
