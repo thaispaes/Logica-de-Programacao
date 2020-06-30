@@ -5,7 +5,7 @@ programa
 	inteiro opcao=0,sair=1,logout=1
 	real valorSaque=0.0,valorDeposito=0.0
 	real dinheiroConta=100.00
- 	inteiro senha=123456 conta=1234
+ 	inteiro senha=123456, conta=1234
 
 	funcao login(){
 		escreva("|                                                     |\n")
@@ -14,7 +14,7 @@ programa
 		escreva("|  Insira a sua conta --> ")
 		leia(conta)
 	}
-
+	
 	funcao menu(){
 		escreva("|=====================================================|\n")
 		escreva("|           Bem Vindo a sua conta Usuário             |\n")
@@ -123,7 +123,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2711; 
+ * @POSICAO-CURSOR = 1026; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
