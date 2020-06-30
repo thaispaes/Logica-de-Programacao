@@ -5,7 +5,7 @@ programa
 	inteiro opcao=0,sair=1,logout=1
 	real valorSaque=0.0,valorDeposito=0.0
 	real dinheiroConta=100.00
- 	inteiro senha=123456, conta=1234
+ 	inteiro senha,conta
 
 	funcao login(){
 		escreva("|                                                     |\n")
@@ -13,6 +13,8 @@ programa
 		leia(senha)
 		escreva("|  Insira a sua conta --> ")
 		leia(conta)
+		
+		escreva("|                   Dados inválidos                   |\n")
 	}
 	
 	funcao menu(){
@@ -61,15 +63,26 @@ programa
 	funcao saida(){
 		escreva("|==============================================|\n")
 		escreva("|     Deseja realizar mais alguma operação?    |\n")
-		escreva("| Digite '1' para sim e outro número para não -> ")
+		escreva("|    Digite '1' para sim e outro número para   |\n ")
+		escreva("| Ou digite '0' para finalizar o processo -> ")
 		leia(sair)
-			se (sair!=1){
-				escreva("|     Obrigado por utilizar a aplicação        |\n")
-				escreva("===============================================|")
-			}senao
-			limpa()
+			se (sair!=1 e sair!=0){
+				reset()
+			}
+			se(sair==0){
+				logout=0;
+			}
 	}
-
+  funcao reset(){
+  	opcao=0
+  	sair=1
+  	logout=1
+	valorSaque=0.0
+	valorDeposito=0.0
+	dinheiroConta=100.00
+ 	senha=0
+ 	conta=0
+  }
 	funcao real verificarSaque(dinheiroConta){
 		se (valorSaque>dinheiroConta ){
 			enquanto (valorSaque>dinheiroConta){
@@ -85,14 +98,13 @@ programa
 	}
 	funcao inicio()
 	{	
-		enquanto (logout==1){
+		enquanto(logout==1){
+			se(senha!=123456 ou conta!=1234){
 			escreva("|=====================================================|\n")
 			escreva("|-------- Bem vindo ao nosso caixa eletrônico --------|\n")
 			login()
-			escreva("|=====================================================|\n")
-			limpa()
-			
-				enquanto (sair==1){
+			}senao{
+				se (sair==1){
 					menu()
 					limpa()
 		
@@ -115,7 +127,10 @@ programa
 						pare
 				}
 			}
-		}	
+			}
+			
+		}
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -123,7 +138,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1026; 
+ * @POSICAO-CURSOR = 3778; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
