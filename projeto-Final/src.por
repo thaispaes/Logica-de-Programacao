@@ -47,13 +47,15 @@ programa
 		inteiro verificarConta =tx.numero_caracteres(conta)
 		inteiro verificarSenha =tx.numero_caracteres(senha)
 
-		
+		inteiro errosSenha=0
+		 
 		enquanto (dadosCorretos==falso){
 	
 			se (verificarAgencia==8){
 				 dadosCorretos=verdadeiro
 				 
 			}senao{
+				dadosCorretos=falso
 				pularLinha()
 				escreva("|---- Os números da Agência são inválidos  ----|\n")
 				escreva("|-- O total de digitos deve ser de 8 números --|\n")
@@ -66,6 +68,7 @@ programa
 				 dadosCorretos=verdadeiro
 				 
 			}senao{
+				dadosCorretos=falso
 				pularLinha()
 				escreva("|--- Os números da sua conta são inválidos  ---|\n")
 				escreva("|-- O total de digitos deve ser de 4 números --|\n")
@@ -78,12 +81,16 @@ programa
 				 dadosCorretos=verdadeiro
 				 
 			}senao{
+				dadosCorretos=falso
 				pularLinha()
 				escreva("|--- Os números da sua senha são inválidos  ---|\n")
 				escreva("|-- O total de digitos deve ser de 6 números --|\n")
 				escreva("| Insira o número correto da sua senha -> ")
 				leia(senha)
 				verificarSenha=tx.numero_caracteres(senha)	
+				errosSenha++
+				bloqueioUsuario(falso,errosSenha)
+
 			}
 				
 		}
@@ -91,6 +98,29 @@ programa
 		retorne dadosCorretos
 	}
 
+	funcao logico bloqueioUsuario(logico bloqueio, inteiro erros){
+
+			se (erros==3){
+				limpa()
+				linhaFina()
+				desenhoLaterais()
+				escreva("|   Caro Usuário foi identificado que a senha  |\n")
+				escreva("|   da sua conta foi inserida 3 vezes errada   |\n")
+				escreva("|     Sendo assim sua conta está bloqueada     |\n")
+				desenhoLaterais()
+				escreva("|  Entre em contato para reativar seu acesso   |\n")
+				desenhoLaterais()
+				escreva("| Espere 10 segundos para encerrar sua sessão  |\n")
+				desenhoLaterais()
+				linhaFina()
+				u.aguarde(10000)
+				limpa()
+				login()
+				bloqueio=verdadeiro
+			}
+			
+		retorne bloqueio 
+	}
 	//Verificação das opções do caixa
 	funcao inteiro verificarOpcao(inteiro opcao){
 
@@ -202,7 +232,6 @@ programa
 		pularLinha()
 		linhaGrossa()
 		u.aguarde(1000)
-		repeticao=1
 		limpa()
 		
 	}
@@ -211,6 +240,7 @@ programa
 	
 	//Função que mostra o login e as verificações do mesmo
 	funcao login(){
+		linhaFina()
 		escreva("|----- Informe seu nome --> ")
 		leia(nome)
 		escreva("|----- Informe a sua Agência --> ")
@@ -258,9 +288,6 @@ programa
 			escreva("|==============================================|\n")
 			escreva("|         Bem vindo ao Caixa eletrônico        |\n")
 			escreva("|                                              |\n")
-			linhaFina()
-			
-			
 			login()
 			limpa()
 			escreva("|==============================================|\n")
@@ -285,7 +312,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6365; 
+ * @POSICAO-CURSOR = 7140; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
