@@ -2,7 +2,6 @@ programa
 {
 	
 	
-	
 	//Bibliotecas
 	inclua biblioteca Util --> u
 	inclua biblioteca Tipos --> tp
@@ -35,17 +34,6 @@ programa
 	//Esta função adiciona um pulo de linha com um desenho das laterais
 	funcao desenhoLaterais(){
 		escreva("|                                              |\n")
-	}
-
-	//Função que mostra uma mensagem de agradecimento ao usuário no fim da aplicação
-	funcao agradecimento(){
-		linhaFina()
-		desenhoLaterais()
-		escreva("|   Obrigado pela confiança no nosso sitemas   |\n")
-		escreva("|      Caso deseja dar um feedback sobre       |\n")
-		escreva("|          Porfavor entrar em contato          |\n")
-		desenhoLaterais()
-		linhaFina()
 	}
 
 	//VERIFICAÇÕES DA APLICAÇÃO
@@ -136,6 +124,15 @@ programa
 		retorne opcao
 	}
 
+	funcao inteiro verificarLogout(inteiro saida){
+		se (saida==1){
+			opcoes()
+		}senao{
+			logout()
+		}
+		retorne saida
+	}
+	
 
 	//MINI-MENUS e MENU DA APLICAÇÃO 
 
@@ -143,7 +140,7 @@ programa
 	funcao opcoes(){
 
 		//Variáveis
-		inteiro opcao=0
+		inteiro opcaoMenu=0
 
 			linhaFina()
 			escreva("|     Ações de Saldo e Deposito de dinheiro    |\n")
@@ -155,23 +152,25 @@ programa
 			escreva("|-----  Visualizar Extrato da conta (4)   -----|\n")
 			escreva("|-----         Sacar da conta (5)         -----|\n")
 			desenhoLaterais()
-			escreva("|  Caso deseje fazer Logout ou finalizar o app |\n")
+			escreva("|    Caso deseje fazer Logout da sua conta     |\n")
 			escreva("|              digite o número 6               |\n")
 			desenhoLaterais()
 			escreva("|      Qual a ação que deseja realizar -> ")
-			leia(opcao)
+			leia(opcaoMenu)
 			desenhoLaterais()
 			escreva("|       Processando....                        |\n")
 			pularLinha()
 			linhaGrossa()
 			u.aguarde(1000)
 			limpa()
-			verificarOpcao(opcao)	
+			verificarOpcao(opcaoMenu)	
 	
 	}
 
 	//Voltar ao menu de opcoes ou finalizar essa sessão
-	funcao repetir(){
+	funcao repetirOpcoes(){
+		/*Variável -> */ inteiro sair
+		desenhoLaterais()
 		desenhoLaterais()
 		escreva("|--- Você deseja realizar mais alguma coisa? --|\n")
 		escreva("|----      Caso sim, digite o número '1'   ----|\n")
@@ -180,29 +179,32 @@ programa
 		escreva("|---- Digite a sua opcão --> ")
 		leia(sair)
 		desenhoLaterais()
+		escreva("|       Processando....                    |\n")
+		desenhoLaterais()	
 		linhaFina()
+		u.aguarde(1000)
+		limpa()
+		verificarLogout(sair)
+		
 	}
 
 	//Menu de logout ou encerrar a aplicação
 	funcao logout(){
 		linhaGrossa()
-		pularLinha()
-		escreva("|       Caso deseje deslogar digite '1'         |\n")
-		escreva("|   Se deseja encerrar o app digite um núemro   |\n")
-		escreva("|                                               |\n")
-		escreva("|  Insira a sua opcao --> ")
-		leia(repeticao)
-		pularLinha()
+		desenhoLaterais()
+		escreva("|   Obrigado pela confiança no nosso sistema   |\n")
+		escreva("|      Caso deseja dar um feedback sobre       |\n")
+		escreva("|          Porfavor entrar em contato          |\n")
+		desenhoLaterais()
+		linhaGrossa()
 		desenhoLaterais()
 		escreva("|       Processando....                        |\n")
 		pularLinha()
 		linhaGrossa()
 		u.aguarde(1000)
+		repeticao=1
 		limpa()
-
-		 se(repeticao!=1){
-			agradecimento()
-		}
+		
 	}
 
 	//FUNÇÕES PRINCIPAIS DE "TELAS" DA APLICAÇÃO
@@ -283,7 +285,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6471; 
+ * @POSICAO-CURSOR = 6365; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
