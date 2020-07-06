@@ -24,4 +24,4 @@
 - [x] Funções e procedimentos 
 
 ## :balloon: Qual plataforma de desenvolvimento?
-        Foi utilizado para programar a ide Portugol Studio, usada para aprendizado do algoritmo
+  Foi utilizado para programar a ide Portugol Studio, usada para aprendizado do algoritmo
